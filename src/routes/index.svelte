@@ -12,7 +12,7 @@
 	}
 
 	.page {
-		height: calc(100vh);
+		min-height: calc(100vh);
 		@apply box-border flex flex-row items-center;
 
 		&:not(:last-child) {
@@ -20,7 +20,7 @@
 		}
 
 		&:first-child {
-			height: calc(100vh - 16rem);
+			min-height: calc(100vh - 8rem);
 		}
 	}
 
@@ -49,7 +49,7 @@
 
 <ThemeToggle />
 <main
-	class="md:container md:mx-auto relative border-2 m-32 p-32 border-black dark:border-white box-bg">
+	class="md:container md:mx-auto relative border-2 m-32 px-32 border-black dark:border-white box-bg">
 	<div>
 		<div class="page">
 			<div class="flex flex-row items-end">
