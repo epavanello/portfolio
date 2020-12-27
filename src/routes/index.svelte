@@ -3,21 +3,25 @@
 	import ThemeToggle from "../components/ThemeToggle.svelte";
 	import NavItem from "../components/NavItem.svelte";
 	import Typewriter from "../components/Typewriter.svelte";
-	import SvelteTypewriter from "svelte-typewriter";
+
+	import { scrollto } from "svelte-scrollto";
+
+	import { fade } from "svelte/transition";
+
+	let y;
+
+	let showArrow = true;
+	$: showArrow = y < 400;
 </script>
 
 <style global type="text/scss">
 	.title {
-		@apply font-mono font-extralight text-5xl leading-normal;
+		@apply font-mono font-extralight text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl leading-normal;
 	}
 
 	.page {
 		min-height: calc(100vh);
 		@apply box-border flex flex-row items-center;
-
-		&:not(:last-child) {
-			@apply border-b-2 border-dashed border-current;
-		}
 
 		&:first-child {
 			min-height: calc(100vh - 8rem);
@@ -30,6 +34,8 @@
 </style>
 
 <TailwindStyles />
+
+<svelte:window bind:scrollY={y} />
 
 <nav
 	class="absolute right-40 top-12 -mt-1 flex flex-row-reverse justify-end gap-4">
@@ -49,42 +55,43 @@
 
 <ThemeToggle />
 <main
-	class="md:container md:mx-auto relative border-2 m-32 px-32 border-black dark:border-white box-bg">
+	class="w-full md:container md:mx-auto relative border-2 my-32 px-32 border-black dark:border-white box-bg">
 	<div>
-		<div class="page">
-			<div class="flex flex-row items-end">
+		<div class="page" id="page1">
+			<div
+				class="flex flex-1 flex-col xl:flex-row items-stretch xl:items-end  mt-32 xl:mt-0">
 				<div
-					class="rounded-2xl w-60 h-60 flex-shrink-0 border-4 border-green-400 flex items-center justify-center">
+					class="rounded-2xl w-60 h-60 flex-shrink-0 self-center border-4 border-green-400 flex items-center justify-center">
 					<i class="fas fa-glasses fa-4x" />
 				</div>
-				<div class="flex flex-col ml-32">
+				<div class="flex flex-col mt-16 xl:mt-0 xl:ml-32">
 					<h1 class="title">Hi,</h1>
 					<h1 class="title">
 						My name is
-						<span class="font-bold">Emanuele Pavanello</span>
-						and I'm a
+						<span class="font-bold">Emanuele.</span><br />
+						I'm a
 						<Typewriter>
-							<span>Frontend Developer</span>
-							<span>Backend Developer</span>
-							<span>Mobile Developer</span>
+							<span>Full Stack Developer</span>
 							<span>DevOps</span>
+							<span>Product Owner</span>
+							<span>Mobile Developer</span>
 						</Typewriter>
 					</h1>
 					<h1 class="title">
-						from
+						living in
 						<span class="font-bold">Turin, Italy</span>
 					</h1>
 				</div>
 			</div>
 		</div>
-		<div class="page">
+		<div class="page" id="page2">
 			<h1 class="title">
 				I'm working with
 				<Typewriter>
 					<span>C++</span>
-					<span>ES6</span>
+					<span>Typescript</span>
 					<span>React</span>
-					<span>Angular2+</span>
+					<span>Angular</span>
 					<span>Vue</span>
 					<span>Svelte</span>
 					<span>NodeJS</span>
@@ -93,8 +100,13 @@
 			</h1>
 		</div>
 	</div>
-	<div class="fixed bottom-8 left-0 w-full flex flex-row justify-center">
-		<i
-			class="fas fa-long-arrow-alt-down fa-2x animate-bounce hover:opacity-25 w-16 h-16 cursor-pointer transition-opacity flex items-center justify-center" />
-	</div>
+	{#if showArrow}
+		<div
+			transition:fade
+			class="fixed bottom-8 left-0 w-full flex flex-row justify-center">
+			<i
+				use:scrollto={'#page2'}
+				class="fas fa-long-arrow-alt-down fa-2x animate-bounce hover:opacity-25 w-16 h-16 cursor-pointer transition-opacity flex items-center justify-center" />
+		</div>
+	{/if}
 </main>
