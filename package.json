@@ -2,12 +2,10 @@
 	"name": "portfolio",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
-		"start": "svelte-kit start"
+		"dev": "svelte dev",
+		"build": "svelte build"
 	},
 	"dependencies": {
-		"@sveltejs/adapter-static": "^1.0.0-next.0",
 		"autoprefixer": "^10.1.0",
 		"postcss": "^8.2.1",
 		"svelte-media": "0.0.3",
@@ -18,11 +16,11 @@
 	"devDependencies": {
 		"@snowpack/plugin-build-script": "^2.0.12",
 		"@snowpack/plugin-typescript": "^1.0.0",
-		"@sveltejs/adapter-netlify": "next",
-		"@sveltejs/kit": "next",
-		"@sveltejs/snowpack-config": "next",
+		"@sveltejs/adapter-netlify": "0.0.11",
+		"@sveltejs/kit": "0.0.25",
+		"@sveltejs/snowpack-config": "0.0.5",
 		"sass": "^1.0.0",
-		"svelte": "^3.31.0",
+		"svelte": "^3.29.7",
 		"svelte-preprocess": "^4.5.2",
 		"tslib": "^2.0.0",
 		"typescript": "^4.0.0"
