@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = ".svelte/build"
+  publish = "build"
   functions = "functions"
 [build.environment]
   NODE_VERSION = "14"
