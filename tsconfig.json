@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es2017",
+    "importsNotUsedAsValues": "error",
+    "isolatedModules": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "$components/*": ["./src/components/*"],
+      "$logic/*": ["./src/logic/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*", ".svelte"]
+}

@@ -10,6 +10,7 @@ module.exports = {
         },
       },
     ],
+    "@snowpack/plugin-typescript",
   ],
   mount: {
     "src/components": "/_components",

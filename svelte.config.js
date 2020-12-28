@@ -3,8 +3,27 @@ module.exports = {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
   preprocess: sveltePreprocess({
+    defaults: {
+      script: "typescript",
+    },
     postcss: {
       plugins: [require("tailwindcss")],
+    },
+    babel: {
+      presets: [
+        [
+          "@babel/preset-env",
+          {
+            loose: true,
+            // No need for babel to resolve modules
+            modules: false,
+            targets: {
+              // ! Very important. Target es6+
+              esmodules: true,
+            },
+          },
+        ],
+      ],
     },
   }),
   kit: {
