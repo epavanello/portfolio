@@ -19,7 +19,7 @@
 
 <div
     on:click={toggle}
-    class="box-bg flex flex-row items-center border-2 border-black dark:border-white transition-colors rounded-full fixed right-12 top-12 z-10">
+    class="box-bg flex flex-row items-center border-2 border-black dark:border-white transition-colors rounded-full fixed right-8 top-12 z-10">
     <i
         class="fas fa-sun text-black dark:text-white transition-colors w-4 h-4 m-2 inline-block" />
     <button

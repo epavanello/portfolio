@@ -16,7 +16,6 @@
             items.push(node);
             node.style.display = "none";
         }
-        console.log(items);
 
         let index = 0;
         while (true) {

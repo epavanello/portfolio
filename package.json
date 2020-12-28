@@ -17,6 +17,7 @@
 	"dependencies": {
 		"autoprefixer": "^10.1.0",
 		"postcss": "^8.2.1",
+		"svelte-media": "0.0.3",
 		"svelte-scrollto": "^0.2.0",
 		"svelte-typewriter": "^2.4.5",
 		"tailwindcss": "^2.0.2"

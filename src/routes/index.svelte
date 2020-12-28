@@ -1,17 +1,20 @@
 <script>
-	import TailwindStyles from "../components/TailwindStyles.svelte";
-	import ThemeToggle from "../components/ThemeToggle.svelte";
-	import NavItem from "../components/NavItem.svelte";
-	import Typewriter from "../components/Typewriter.svelte";
+	import TailwindStyles from "$components/TailwindStyles.svelte";
+	import Typewriter from "$components/Typewriter.svelte";
 
 	import { scrollto } from "svelte-scrollto";
 
 	import { fade } from "svelte/transition";
+	import Header from "$components/Header.svelte";
+
+	import media from "$logic/media";
 
 	let y;
 
 	let showArrow = true;
 	$: showArrow = y < 400;
+
+	$: console.log($media);
 </script>
 
 <style global type="text/scss">
@@ -37,29 +40,13 @@
 
 <svelte:window bind:scrollY={y} />
 
-<nav
-	class="absolute right-40 top-12 -mt-1 flex flex-row-reverse justify-end gap-4">
-	<NavItem icon="fas fa-envelope">
-		<div class="absolute h-3 w-3 right-0.5 top-1.5 flex">
-			<span
-				class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-			<span
-				class="relative inline-flex h-3 w-3 rounded-full bg-green-400" />
-		</div>
-	</NavItem>
-	<NavItem icon="fab fa-github" />
-	<NavItem icon="fab fa-twitter" />
-	<NavItem icon="fab fa-facebook-f" />
-	<NavItem icon="fab fa-instagram" />
-</nav>
-
-<ThemeToggle />
+<Header />
 <main
-	class="w-full md:container md:mx-auto relative border-2 my-32 px-32 border-black dark:border-white box-bg">
+	class="relative border-2 m-32 px-8 md:px-16 lg:px-32 border-black dark:border-white box-bg">
 	<div>
 		<div class="page" id="page1">
 			<div
-				class="flex flex-1 flex-col xl:flex-row items-stretch xl:items-end  mt-32 xl:mt-0">
+				class={`flex flex-1 ${$media.xl ? 'items-end flex-row mt-0' : 'flex-col'}`}>
 				<div
 					class="rounded-2xl w-60 h-60 flex-shrink-0 self-center border-4 border-green-400 flex items-center justify-center">
 					<i class="fas fa-glasses fa-4x" />
@@ -96,6 +83,10 @@
 					<span>Svelte</span>
 					<span>NodeJS</span>
 					<span>C#</span>
+					<span>Docker</span>
+					<span>CI/CD</span>
+					<span>AWS</span>
+					<span>React Native</span>
 				</Typewriter>
 			</h1>
 		</div>
