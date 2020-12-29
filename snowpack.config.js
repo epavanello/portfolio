@@ -3,7 +3,7 @@ module.exports = {
   extends: "@sveltejs/snowpack-config",
   plugins: [
     [
-      "@snowpack/plugin-build-script",
+      "@snowpack/plugin-svelte",
       {
         compilerOptions: {
           hydratable: true,
