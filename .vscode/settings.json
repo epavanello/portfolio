@@ -1,4 +1,5 @@
 {
   "svelte.plugin.css.diagnostics.enable": false,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "recommendations": ["svelte.svelte-vscode"]
 }
