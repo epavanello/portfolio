@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./src/**/*.html", "./src/**/*.svelte"],
+  purge: ["./public/**/*.html", "./src/**/*.svelte"],
   darkMode: "class",
   theme: {
     extend: {},
@@ -7,7 +7,7 @@ module.exports = {
   variants: {
     extend: {
       backgroundOpacity: ["dark"],
-      scale: ['group-hover'],
+      scale: ["group-hover"],
     },
   },
   plugins: [],
