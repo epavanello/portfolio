@@ -21,7 +21,7 @@
 
 <style global lang="postcss">
   .title {
-    @apply font-mono font-extralight text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl leading-normal;
+    @apply font-mono font-extralight text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl leading-10;
   }
 
   .page-container {
